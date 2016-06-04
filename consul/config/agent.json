@@ -1,0 +1,38 @@
+{
+	"client_addr": "0.0.0.0",
+	"data_dir": "/data",
+	"leave_on_terminate": true,
+	"dns_config": {
+		"allow_stale": true,
+		"max_stale": "1s"
+	},
+	"checks": [
+        {
+            "id": "check_cpu_utilization",
+            "notes": "Greater than 50% warn, greater than 75% fail.",
+            "name": "CPU Utilization",
+            "docker_container_id": "hc",
+            "script": "utilization -- cpu",
+            "interval": "10s",
+            "timeout": "5s"
+        },
+        {
+            "id": "check_ram_utilization",
+            "notes": "Greater than 50% warn, greater than 75% fail.",
+            "name": "RAM Utilization",
+            "docker_container_id": "hc",
+            "script": "utilization -- ram",
+            "interval": "10s",
+            "timeout": "1s"
+        },
+        {
+            "id": "check_hdd_utilization",
+            "notes": "Greater than 70% warn, greater than 85% fail.",
+            "name": "HDD Utilization",
+            "docker_container_id": "hc",
+            "script": "utilization --warning-limit 70 -- hdd",
+            "interval": "60s",
+            "timeout": "1s"
+        }
+    ]
+}
