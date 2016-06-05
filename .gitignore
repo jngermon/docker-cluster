@@ -4,3 +4,5 @@ consul/config/local.json
 consul/docker-compose.yml
 
 registrator/docker-compose.yml
+
+swarm/docker-compose.yml

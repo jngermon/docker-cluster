@@ -4,10 +4,12 @@ help:           ## Show this help.
 master:         ## Use node as master
 	make -C consul master
 	make -C registrator master
+	make -C swarm master
 
 slave:          ## Use node as slave
 	make -C consul slave
 	make -C registrator slave
+	make -C swarm slave
 
 stop:           ## Stop every services
 	make -C consul stop
