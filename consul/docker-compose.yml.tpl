@@ -16,7 +16,7 @@ server:
         - "8302:8302"
         - "8302:8302/udp"
         - "8400:8400"
-        - "__CONSUL_UI_PORT__:8500"
+        - "__CONSUL_API_PORT__:8500"
         - "8600:8600/udp"
         
 agent:
@@ -36,7 +36,7 @@ agent:
         - "8302:8302"
         - "8302:8302/udp"
         - "8400:8400"
-        - "__CONSUL_UI_PORT__:8500"
+        - "__CONSUL_API_PORT__:8500"
         - "8600:8600/udp"
 
 health-check:
